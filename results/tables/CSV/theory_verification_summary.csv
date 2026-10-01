@@ -1,0 +1,9 @@
+test,rho,p_value,n
+A(b) vs. degradation (aggregate),0.8700121668004868,5.721901517527647e-72,230
+bits vs. degradation (same subset),-0.8745153142797454,1.3453592218221049e-73,230
+"Spearman(d_ff, max|W|)",-0.18836339673824434,0.24442657315474628,40
+A(b) vs. degradation (attention),0.8642904011939172,5.512522366745958e-70,230
+A(b) vs. degradation (mlp),0.8592329789820572,2.6355931018124237e-68,230
+A(b) vs. degradation (embedding),0.8733124968166488,3.714992768886078e-73,230
+A(b) vs. degradation (unembed),0.8648621504100175,3.525508949745891e-70,230
+SwiGLU: frac. seeds with ||W_u x||>=||sigma(W_g x)||,0.9565217391304348,,23
