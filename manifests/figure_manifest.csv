@@ -1,0 +1,17 @@
+publication_number,base_name,category,status,current_evidence,notes
+Figure 1,fig1_grokking_trajectory,main,current publication-facing,yes,
+Figure 2,fig2_primary_selectivity,main,current publication-facing,yes,
+Figure 3,fig3_architectural_fragility,main,current publication-facing,yes,
+Figure 4,fig4_cross_task_robustness,main,current publication-facing,yes,
+Figure S1,figS1_phenomenon,supplementary,current supplementary record,yes,raw-gap panel; descriptive provenance figure
+Figure S2,figS2_post_grok_instability,supplementary,current supplementary record,yes,raw dip counts; evaluation-density qualification
+Figure S3,figS3_width_swiglu_verification,supplementary,current supplementary record,yes,descriptive width/activation capture
+Figure S4,figS4_generality,supplementary,current supplementary record,yes,all-run p=97 graphic; subtraction includes never-grokked models
+Figure S5,figS5_width_theory,supplementary,current supplementary record,yes,two-bit width response is floor-saturated
+Figure S6,figS6_architecture_schematic,supplementary,current supplementary record,yes,architecture schematic; descriptive group sensitivities
+Figure S7,figS7_theory_verification,supplementary,current supplementary record,yes,raw correlations; bit-width confounding/provenance limits
+,fig2_fine_grained_hunt,source_archive,historical/superseded,no,historical source export; not current publication-facing evidence
+,fig3_mechanism,source_archive,historical/superseded,no,archive only: incomplete/overstated mechanism panels
+,fig6_train_fraction,source_archive,historical/superseded,no,archive only: historical embedded eligibility labels
+,fig7_statistical_rigor,source_archive,historical/superseded,no,archive only: superseded equivalence statement
+,fig8_grokking_trajectory,source_archive,historical/superseded,no,superseded by final publication-facing trajectory

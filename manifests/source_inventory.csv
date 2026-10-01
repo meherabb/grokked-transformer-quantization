@@ -1,0 +1,9 @@
+source_name,repository_path,artifact_type,role,curation_note
+e1-core-phenomenon.ipynb,notebooks/e1_addition_experiments.ipynb,executed notebook,E1 addition experiments,preserved content; renamed for public repository
+e5-cross-task-replication.ipynb,notebooks/e5_multiplication_subtraction_experiments.ipynb,executed notebook,E5 multiplication/subtraction experiments,preserved content; renamed for public repository
+grokked_transformer_quantization_analysis_v1.ipynb.ipynb,notebooks/grokked_transformer_quantization_analysis_v1.ipynb,executed notebook,consolidated analysis / E6-E7 workflow,duplicate extension corrected; notebook content preserved
+grokked_transformer_quantization_analysis_v1.py,notebooks/exports/grokked_transformer_quantization_analysis_v1.py,notebook export,text-searchable Python export,historical auto-export; ipynb is canonical
+e1_dataset.zip,data/raw_archives/e1_dataset.zip,archive,E1 original dataset export,unchanged
+e5_dataset.zip,data/raw_archives/e5_dataset.zip,archive,E5 original dataset export,unchanged
+E6E7_DATASET_SLUG.zip,data/raw_archives/E6E7_DATASET_SLUG.zip,archive,E6/E7 and theory source export,unchanged historical filename retained for provenance
+grokked_transformer_quantization_experiments_v1.zip.zip,data/consolidated/grokked_transformer_quantization_experiments_v1.zip,archive,curated consolidated experiment export,duplicate extension corrected
