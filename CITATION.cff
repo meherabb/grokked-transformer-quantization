@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the accompanying manuscript and this research artifact."
+title: "Grokked Transformer Quantization: Experiment and Reproducibility Artifact"
+type: software
+authors:
+  - family-names: "Meherab"
+    given-names: "Md Muntaqim"
+    orcid: "https://orcid.org/0009-0008-3383-6740"
+  - family-names: "Muhammad"
+    given-names: "Mahathir"
+    orcid: "https://orcid.org/0009-0003-6903-6474"
+version: 1.0.0
+date-released: 2026-10-01
+license: MIT
+keywords:
+  - grokking
+  - post-training quantization
+  - transformers
+  - SwiGLU
+  - robustness
+  - mechanistic interpretability
+  - modular arithmetic
+preferred-citation:
+  type: article
+  title: "Train–Test Selectivity and Architectural Fragility Under Quantization of Grokked Transformers"
+  authors:
+    - family-names: "Meherab"
+      given-names: "Md Muntaqim"
+      orcid: "https://orcid.org/0009-0008-3383-6740"
+    - family-names: "Muhammad"
+      given-names: "Mahathir"
+      orcid: "https://orcid.org/0009-0003-6903-6474"
+  year: 2026
