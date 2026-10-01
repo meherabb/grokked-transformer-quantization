@@ -31,6 +31,7 @@ Under Quantization of Grokked Transformers
 <p align="center">
   <a href="#research-question">Research question</a> ·
   <a href="#research-pipeline">Pipeline</a> ·
+  <a href="#model-architecture">Architecture</a> ·
   <a href="#audited-interpretation">Findings</a> ·
   <a href="#publication-facing-main-figures">Figures</a> ·
   <a href="#repository-layout">Repository</a> ·
@@ -71,7 +72,7 @@ The repository deliberately distinguishes:
 | Arithmetic tasks | **3** |
 | Prime moduli | **2** |
 | Quantization operators | **3** |
-| Main publication figures | **4** |
+| Main publication figures | **5** |
 | Audited supplementary figures | **7** |
 | Default transformer depth | **1 transformer block** |
 | Default model width | **128** |
@@ -262,56 +263,31 @@ Its feed-forward computation is:
 MLP(x) = W_d [ SiLU(W_g x) ⊙ (W_u x) ]
 ```
 
-```mermaid
-flowchart LR
-    TOK["Tokens<br/>[a, b, =]"]
-    EMB["Token + position<br/>embeddings"]
-    ATT["Causal<br/>self-attention"]
-    RES["Residual<br/>stream"]
+### Architecture and projection-level intervention design
 
-    subgraph SWI["SwiGLU feed-forward block"]
-        X["Input x"]
-        G["Gate<br/>Wg x"]
-        U["Up<br/>Wu x"]
-        S["SiLU"]
-        MUL["Element-wise<br/>product"]
-        D["Down<br/>Wd"]
+<p align="center">
+  <img
+    src="figures/main/png/fig0_Transformer Architecture and Projection Intervention Design.png.png"
+    width="1000"
+    alt="One-layer causal transformer architecture and isolated Gate Up Down projection quantization intervention design">
+</p>
 
-        X --> G
-        X --> U
-        G --> S
-        S --> MUL
-        U --> MUL
-        MUL --> D
-    end
+The publication-facing schematic shows the actual three-token input
+`[a, b, =]`, the one-layer causal transformer with a SwiGLU feed-forward
+block, and the isolated projection-level intervention protocol used for the
+architectural analysis.
 
-    OUT["Unembedding"]
-    PRED["Prediction<br/>mod p"]
+For the projection experiment, the cleaned FP32 checkpoint comes from a
+model that had previously crossed the recorded grokking threshold. Gate
+`W_g`, Up `W_u`, or Down `W_d` is INT-quantized **one projection at a time**
+while all remaining parameters stay at full precision. Retained test accuracy
+is then compared within the same trained models. The principal architectural
+comparison reported in the manuscript uses **INT-4**.
 
-    TOK --> EMB --> ATT --> RES --> X
-    D --> OUT --> PRED
-
-    classDef input fill:#0969DA,stroke:#79C0FF,color:#FFFFFF,stroke-width:2px;
-    classDef attention fill:#0E7490,stroke:#67E8F9,color:#FFFFFF,stroke-width:2px;
-    classDef residual fill:#24292F,stroke:#8C959F,color:#FFFFFF,stroke-width:2px;
-    classDef gate fill:#8250DF,stroke:#D2A8FF,color:#FFFFFF,stroke-width:2px;
-    classDef up fill:#9A6700,stroke:#E3B341,color:#FFFFFF,stroke-width:2px;
-    classDef down fill:#1A7F37,stroke:#56D364,color:#FFFFFF,stroke-width:2px;
-    classDef output fill:#CF222E,stroke:#FF7B72,color:#FFFFFF,stroke-width:2px;
-
-    class TOK,EMB input;
-    class ATT attention;
-    class RES,X residual;
-    class G gate;
-    class U up;
-    class S,MUL,D down;
-    class OUT,PRED output;
-
-    style SWI fill:#161B22,stroke:#A371F7,stroke-width:2px,color:#FFFFFF;
-```
-
-Gate, Up, and Down are shown separately because the experiments reveal
-substantial **projection-dependent numerical sensitivity**.
+Gate, Up, and Down are kept visually separate because the experiments reveal
+substantial **projection-dependent numerical sensitivity**. The intervention
+design measures numerical vulnerability; it does not by itself identify a
+unique causal circuit for generalization.
 
 ---
 
@@ -838,12 +814,16 @@ verified independent causal explanation for the observed PTQ behavior.
 
 ## Publication-facing main figures
 
-The repository provides all four main figures in:
+The current manuscript uses **five** main publication-facing figures. The
+repository provides high-resolution PNG versions for visualization and vector
+PDF versions where they are present in the corresponding `pdf/` directory.
 
-- vector PDF;
-- high-resolution PNG.
+The architecture/intervention schematic is displayed above in the
+[Model architecture](#model-architecture) section because that is where it is
+most useful to readers: it connects the implemented transformer directly to
+the isolated Gate / Up / Down quantization protocol.
 
-### Figure 2 — Primary train–test selectivity
+### Figure 3 — Primary train–test selectivity
 
 <p align="center">
   <img
@@ -852,7 +832,7 @@ The repository provides all four main figures in:
     alt="Primary train-test selectivity under integer quantization">
 </p>
 
-The primary figure separates:
+The primary selectivity figure separates:
 
 - overall training/test degradation;
 - baseline-adjusted `ΔG`;
@@ -860,19 +840,21 @@ The primary figure separates:
 
 ### All main figures
 
-| Figure | Description | PNG | PDF |
+| Manuscript figure | Description | Repository visualization | Vector PDF |
 |:---:|:---|:---:|:---:|
 | 1 | Representative grokking trajectory and checkpoints | [PNG](figures/main/png/fig1_grokking_trajectory.png) | [PDF](figures/main/pdf/fig1_grokking_trajectory.pdf) |
-| 2 | Primary train–test selectivity | [PNG](figures/main/png/fig2_primary_selectivity.png) | [PDF](figures/main/pdf/fig2_primary_selectivity.pdf) |
-| 3 | Architectural fragility | [PNG](figures/main/png/fig3_architectural_fragility.png) | [PDF](figures/main/pdf/fig3_architectural_fragility.pdf) |
-| 4 | Cross-task robustness | [PNG](figures/main/png/fig4_cross_task_robustness.png) | [PDF](figures/main/pdf/fig4_cross_task_robustness.pdf) |
+| 2 | Transformer architecture and projection intervention design | [PNG](figures/main/png/fig0_Transformer%20Architecture%20and%20Projection%20Intervention%20Design.png) | — |
+| 3 | Primary train–test selectivity | [PNG](figures/main/png/fig2_primary_selectivity.png) | [PDF](figures/main/pdf/fig2_primary_selectivity.pdf) |
+| 4 | Architectural fragility | [PNG](figures/main/png/fig3_architectural_fragility.png) | [PDF](figures/main/pdf/fig3_architectural_fragility.pdf) |
+| 5 | Cross-task robustness | [PNG](figures/main/png/fig4_cross_task_robustness.png) | [PDF](figures/main/pdf/fig4_cross_task_robustness.pdf) |
 
 **Interpretation notes**
 
 - **Figure 1:** one representative addition trajectory; not a mean over seeds.
-- **Figure 2:** primary baseline-adjusted selectivity analysis.
-- **Figure 3:** paired architectural and SwiGLU projection sensitivity.
-- **Figure 4:** fixed INT-5 cross-task comparison; subtraction at p=59 contains only two eligible models and is descriptive.
+- **Figure 2:** model architecture plus the isolated Gate / Up / Down intervention protocol; the principal projection analysis uses cleaned checkpoints and INT-4.
+- **Figure 3:** primary baseline-adjusted selectivity analysis.
+- **Figure 4:** paired architectural and SwiGLU projection sensitivity results.
+- **Figure 5:** fixed INT-5 cross-task comparison; subtraction at `p = 59` contains only two eligible models and is descriptive.
 
 ---
 
