@@ -1,0 +1,20 @@
+name: Validate research artifact
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate repository structure
+        run: python scripts/validate_repository.py
+      - name: Verify packaged checksums
+        run: python scripts/verify_checksums.py
