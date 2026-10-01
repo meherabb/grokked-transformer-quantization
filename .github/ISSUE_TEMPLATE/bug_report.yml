@@ -1,0 +1,30 @@
+name: Reproducibility issue
+description: Report a problem reproducing an experiment, table, or figure.
+title: "[Reproducibility] "
+labels: ["reproducibility"]
+body:
+  - type: markdown
+    attributes:
+      value: "Please include enough information to identify the exact artifact and environment."
+  - type: input
+    id: artifact
+    attributes:
+      label: Artifact
+      description: Notebook, data file, table, figure, or script involved.
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem description
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Python, PyTorch/CUDA, GPU, and any relevant package versions.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
