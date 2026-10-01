@@ -1,0 +1,306 @@
+{
+  "python_version": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+  "torch_version": "2.10.0+cpu",
+  "cuda_available": false,
+  "gpu_name": null,
+  "numpy_version": "2.0.2",
+  "pandas_version": "2.3.3",
+  "base_seed": 0,
+  "runtime_env": "kaggle",
+  "output_root": "/kaggle/working/outputs",
+  "zip_path": "/kaggle/working/outputs.zip",
+  "config": {
+    "P_PRIMARY": 97,
+    "P_SECONDARY": 59,
+    "MAX_STEPS": 12000,
+    "WEIGHT_DECAY": 1.0,
+    "TRAIN_FRAC": 0.4,
+    "N_SEEDS_WIDTH": 8,
+    "N_SEEDS_TRAINFRAC": 20,
+    "BIT_WIDTHS": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      10,
+      12,
+      16,
+      23
+    ],
+    "SCHEMES": [
+      "int",
+      "mantissa",
+      "nf"
+    ],
+    "D_FF_SWEEP": [
+      96,
+      171,
+      341,
+      682,
+      1024
+    ],
+    "TRAIN_FRAC_SWEEP": [
+      0.2,
+      0.3,
+      0.4
+    ],
+    "QUICK_TEST": false,
+    "LOAD_E1_DATA": true,
+    "LOAD_E5_DATA": true,
+    "E1_DATASET_SLUG": "e1-dataset",
+    "E5_DATASET_SLUG": "e5-dataset",
+    "E1_DATASET_DIR_resolved": "/kaggle/input/datasets/<user>/e1-dataset/outputs/logs",
+    "E5_DATASET_DIR_resolved": "/kaggle/input/datasets/<user>/e5-dataset/outputs/logs",
+    "RUN_WIDTH_SWEEP": true,
+    "RUN_TRAINFRAC_SWEEP": true
+  },
+  "run_counts": {
+    "addition_runs": 80,
+    "addition_grokked": 76,
+    "multiplication_runs": 50,
+    "multiplication_grokked": 47,
+    "subtraction_runs": 50,
+    "subtraction_grokked": 16,
+    "width_runs": 40,
+    "width_grokked": 40,
+    "trainfrac_runs": 60,
+    "trainfrac_grokked": 30
+  },
+  "stats_report": {
+    "h1_max_train_test_gap_pp_coarse_grid": 1.2623563688248407,
+    "h1_spearman_bits_vs_reversion_gap": {
+      "rho": 0.33105659477080496,
+      "p_value": 1.0990131753197831e-11,
+      "n": 400
+    },
+    "h1_bootstrap_ci_max_gap_pp": {
+      "estimate": 3.273892402648926,
+      "lo": 2.9722869396209717,
+      "hi": 3.273892402648926,
+      "n": 400
+    },
+    "theory_ab_verification_n": 230,
+    "theory_ab_vs_drop_rho": {
+      "rho": 0.8700121668004868,
+      "p_value": 5.721901517527647e-72,
+      "n": 230
+    },
+    "theory_bits_vs_drop_rho_samesubset": {
+      "rho": -0.8745153142797454,
+      "p_value": 1.3453592218221049e-73,
+      "n": 230
+    },
+    "theory_ab_vs_drop_rho_attention": {
+      "rho": 0.8642904011939172,
+      "p_value": 5.512522366745958e-70,
+      "n": 230
+    },
+    "theory_ab_vs_drop_rho_embedding": {
+      "rho": 0.8733124968166488,
+      "p_value": 3.714992768886078e-73,
+      "n": 230
+    },
+    "theory_ab_vs_drop_rho_mlp": {
+      "rho": 0.8592329789820572,
+      "p_value": 2.6355931018124237e-68,
+      "n": 230
+    },
+    "theory_ab_vs_drop_rho_unembed": {
+      "rho": 0.8648621504100175,
+      "p_value": 3.525508949745891e-70,
+      "n": 230
+    },
+    "theory_width_maxw_rho": {
+      "rho": -0.18836339673824434,
+      "p_value": 0.24442657315474628,
+      "n": 40
+    },
+    "theory_width_loglog_slope": {
+      "slope": -0.02498805889480273,
+      "predicted": -0.5
+    },
+    "theory_swiglu_assumption": {
+      "frac_holds": 0.9565217391304348,
+      "mean_ratio": 1.8706002348192663,
+      "n": 23
+    },
+    "h2_subtraction_p97_wilcoxon_bits90_cleaned_test_vs_pregrok_train": {
+      "W": 0.0,
+      "p_value": 0.009374768459434876,
+      "n": 14
+    },
+    "h2_subtraction_p97_tost_equivalence": {
+      "equivalent": false,
+      "p_tost": 0.16778063893271145,
+      "mean_diff": 0.7857142857142857,
+      "bound": 1.0,
+      "n": 14
+    },
+    "h2_subtraction_p97_bootstrap_ci_diff": {
+      "estimate": 0.7857142857142857,
+      "lo": 0.35714285714285715,
+      "hi": 1.2142857142857142,
+      "n": 14
+    },
+    "h3_spearman_erasure_cleanup_vs_accuracy_drop": {
+      "rho": 0.887584264900274,
+      "p_value": 2.216039856687876e-257,
+      "n": 760
+    },
+    "h3_spearman_erasure_fulltrain_vs_accuracy_drop": {
+      "rho": 0.8926106863125413,
+      "p_value": 1.7849537144134527e-264,
+      "n": 760
+    },
+    "h3_partial_spearman_cleanup_controlling_fulltrain": {
+      "rho": -0.016388682089140502,
+      "p_value": 0.6521383361908777,
+      "n": 760
+    },
+    "h3_bootstrap_equivalence_partial_corr_bound0.10": {
+      "ci_lo": -0.0778332551812027,
+      "ci_hi": 0.050025769946198326,
+      "bound": 0.1,
+      "equivalent": true
+    },
+    "h3_bootstrap_equivalence_partial_corr_bound0.12": {
+      "ci_lo": -0.0778332551812027,
+      "ci_hi": 0.050025769946198326,
+      "bound": 0.12,
+      "equivalent": true
+    },
+    "h4_kruskal_group_sensitivity_bits2": {
+      "H": 67.76805236101416,
+      "p_value": 1.2825648632899094e-14,
+      "n": 160
+    },
+    "h4_bootstrap_ci_embedding_vs_mlp_gap_bits2": {
+      "estimate": 0.02062964913202449,
+      "lo": -0.0023337319877464353,
+      "hi": 0.04451923828455619,
+      "n_a": 40,
+      "n_b": 40
+    },
+    "h4_kruskal_group_sensitivity_bits4": {
+      "H": 44.090666901543635,
+      "p_value": 1.4437155047941716e-09,
+      "n": 160
+    },
+    "h4_bootstrap_ci_embedding_vs_mlp_gap_bits4": {
+      "estimate": 0.35372830419801177,
+      "lo": 0.22320248356787487,
+      "hi": 0.47820303645799855,
+      "n_a": 40,
+      "n_b": 40
+    },
+    "h4b_kruskal_gate_up_down_bits2": {
+      "H": 3.235409742986066,
+      "p_value": 0.19835342365542744,
+      "n": 120
+    },
+    "h4b_kruskal_gate_up_down_bits4": {
+      "H": 18.40329202632992,
+      "p_value": 0.00010087322645244442,
+      "n": 120
+    },
+    "h5_crossprime_p97": {
+      "rho": 0.8348288548928849,
+      "p_value": 3.1920955234582056e-105,
+      "n": 400,
+      "mean_acc_lo": 0.010206340684089762,
+      "mean_acc_hi": 0.992481392621994
+    },
+    "h5_crossprime_p59": {
+      "rho": 0.7701239473295975,
+      "p_value": 1.0102006485252464e-79,
+      "n": 400,
+      "mean_acc_lo": 0.016419339366257144,
+      "mean_acc_hi": 0.937278600037098
+    },
+    "h5_crossscheme_int": {
+      "rho": 0.8348288548928849,
+      "p_value": 3.1920955234582056e-105,
+      "n": 400,
+      "mean_acc_lo": 0.010206340684089762,
+      "mean_acc_hi": 0.992481392621994
+    },
+    "h5_crossscheme_mantissa": {
+      "rho": 0.031486233529629454,
+      "p_value": 0.5300631308333718,
+      "n": 400,
+      "mean_acc_lo": 0.989780367910862,
+      "mean_acc_hi": 0.992481392621994
+    },
+    "h5_crossscheme_nf": {
+      "rho": 0.7822645942967373,
+      "p_value": 7.9255955224208115e-84,
+      "n": 400,
+      "mean_acc_lo": 0.01972635472193355,
+      "mean_acc_hi": 0.992481392621994
+    },
+    "h5_crosstask_addition": {
+      "rho": 0.8348288548928849,
+      "p_value": 3.1920955234582056e-105,
+      "n": 400,
+      "mean_acc_lo": 0.010206340684089762,
+      "mean_acc_hi": 0.992481392621994
+    },
+    "h5_crosstask_multiplication": {
+      "rho": 0.8276040829823229,
+      "p_value": 3.8760211701224756e-64,
+      "n": 250,
+      "mean_acc_lo": 0.00916455665603276,
+      "mean_acc_hi": 0.9753779006004334
+    },
+    "h5_crosstask_subtraction": {
+      "rho": 0.7110190526981921,
+      "p_value": 8.357862683995596e-40,
+      "n": 250,
+      "mean_acc_lo": 0.009968118891119905,
+      "mean_acc_hi": 0.7049805101007223
+    },
+    "h6_max_gap_pp_fine_grid_mean": 2.142589014838449,
+    "h6_ratio_bootstrap_ci": {
+      "estimate": 1.3004896072660141,
+      "lo": 1.0947033768101582,
+      "hi": 1.9451194177350666,
+      "n": 40
+    },
+    "h6_verdict": "NO genuine ungrokking window found (ratio CI entirely below the 3x reference threshold)",
+    "h7_max_gap_pp_train_frac_0.20": 81.69023185968399,
+    "h7_max_gap_pp_train_frac_0.30": 33.15012216567993,
+    "h7_max_gap_pp_train_frac_0.40": 1.1989141814410695,
+    "h7_grokked_max_gap_pp_train_frac_0.30": 2.367246747016909,
+    "h7_grokked_max_gap_pp_train_frac_0.40": 1.1989141814410695,
+    "h7_fine_max_gap_pp_train_frac_0.20": 34.82998657040299,
+    "h7_fine_max_gap_pp_train_frac_0.30": 24.389449986629188,
+    "h7_fine_max_gap_pp_train_frac_0.40": 0.349461890291422,
+    "h7_grokked_fine_max_gap_pp_train_frac_0.30": 0.8246391173452142,
+    "h7_grokked_fine_max_gap_pp_train_frac_0.40": 0.349461890291422,
+    "h7_ratio_canonical_vs_default": 1.9744922394458029,
+    "h7_verdict": "gap size DIFFERS meaningfully with train fraction (2.0x) -- the joint-collapse finding at 40% IS partly a data-fraction artifact; the effect is much larger at the canonical 30%",
+    "h8_median_weight_norm_frac_change": 0.17382039596255808,
+    "h8_frac_runs_stable_below_5pct": 0.2236842105263158,
+    "h8_frac_runs_converged_flag": 0.2236842105263158,
+    "h8_verdict": "weight norm still moving substantially -- cleaned_up may not be fully stable; consider more steps or a stricter convergence check",
+    "h4theory_spearman_dff_vs_accuracy_drop_bits2": {
+      "rho": -0.2764583601965874,
+      "p_value": 0.08419141090698842,
+      "n": 40
+    },
+    "h4theory_spearman_dff_vs_accuracy_drop_bits4": {
+      "rho": -0.3537556475328003,
+      "p_value": 0.025132279450518765,
+      "n": 40
+    },
+    "h4theory_spearman_dff_vs_accuracy_drop_bits5": {
+      "rho": -0.38746483578256274,
+      "p_value": 0.013504462927635739,
+      "n": 40
+    }
+  },
+  "total_runtime_min": 10.838936221599578,
+  "timestamp": "2026-09-30T10:03:05.015970"
+}
