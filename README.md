@@ -842,7 +842,7 @@ The primary selectivity figure separates:
 
 | Manuscript figure | Description | Repository visualization | Vector PDF |
 |:---:|:---|:---:|:---:|
-| 1 | Representative grokking trajectory and checkpoints | [PNG](figures/main/png/fig1_grokking_trajectory.png) | [PDF](figures/main/pdf/fig1_grokking_trajectory.pdf) |
+| 1 | Representative grokking trajectory and checkpoint protocol | [PNG](figures/main/png/fig1_Grokking%20Trajectory%20and%20Checkpoint%20Timeline.png) | — |
 | 2 | Transformer architecture and projection intervention design | [PNG](figures/main/png/fig0_Transformer%20Architecture%20and%20Projection%20Intervention%20Design.png) | — |
 | 3 | Primary train–test selectivity | [PNG](figures/main/png/fig2_primary_selectivity.png) | [PDF](figures/main/pdf/fig2_primary_selectivity.pdf) |
 | 4 | Architectural fragility | [PNG](figures/main/png/fig3_architectural_fragility.png) | [PDF](figures/main/pdf/fig3_architectural_fragility.pdf) |
