@@ -73,7 +73,7 @@ The repository deliberately distinguishes:
 | Prime moduli | **2** |
 | Quantization operators | **3** |
 | Main publication figures | **5** |
-| Audited supplementary figures | **7** |
+| Supplementary figures | **6** |
 | Default transformer depth | **1 transformer block** |
 | Default model width | **128** |
 | Attention heads | **4** |
