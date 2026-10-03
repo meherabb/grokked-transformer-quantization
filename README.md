@@ -865,13 +865,12 @@ than embedded.
 
 | Figure | Description | PNG | PDF |
 |:---:|:---|:---:|:---:|
-| S1 | Original quantization phenomenon diagnostic | [PNG](figures/supplementary/png/figS1_phenomenon.png) | [PDF](figures/supplementary/pdf/figS1_phenomenon.pdf) |
-| S2 | Post-grokking instability diagnostic | [PNG](figures/supplementary/png/figS2_post_grok_instability.png) | [PDF](figures/supplementary/pdf/figS2_post_grok_instability.pdf) |
-| S3 | Width and SwiGLU activation verification | [PNG](figures/supplementary/png/figS3_width_swiglu_verification.png) | [PDF](figures/supplementary/pdf/figS3_width_swiglu_verification.pdf) |
-| S4 | Original all-run generality diagnostic | [PNG](figures/supplementary/png/figS4_generality.png) | [PDF](figures/supplementary/pdf/figS4_generality.pdf) |
-| S5 | Width-theory diagnostic | [PNG](figures/supplementary/png/figS5_width_theory.png) | [PDF](figures/supplementary/pdf/figS5_width_theory.pdf) |
-| S6 | Architecture schematic | [PNG](figures/supplementary/png/figS6_architecture_schematic.png) | [PDF](figures/supplementary/pdf/figS6_architecture_schematic.pdf) |
-| S7 | Qualified raw theory/annihilation diagnostic | [PNG](figures/supplementary/png/figS7_theory_verification.png) | [PDF](figures/supplementary/pdf/figS7_theory_verification.pdf) |
+| S1 | Post-grokking instability diagnostic | [PNG](figures/supplementary/png/figS2_post_grok_instability.png) | [PDF](figures/supplementary/pdf/figS2_post_grok_instability.pdf) |
+| S2 | Width and SwiGLU activation verification | [PNG](figures/supplementary/png/figS3_width_swiglu_verification.png) | [PDF](figures/supplementary/pdf/figS3_width_swiglu_verification.pdf) |
+| S3 | Original all-run generality diagnostic | [PNG](figures/supplementary/png/figS4_generality.png) | [PDF](figures/supplementary/pdf/figS4_generality.pdf) |
+| S4 | Width-theory diagnostic | [PNG](figures/supplementary/png/figS5_width_theory.png) | [PDF](figures/supplementary/pdf/figS5_width_theory.pdf) |
+| S5 | Qualified raw theory/annihilation diagnostic | [PNG](figures/supplementary/png/figS7_theory_verification.png) | [PDF](figures/supplementary/pdf/figS7_theory_verification.pdf) |
+| S6 | Original quantization phenomenon diagnostic | [PNG](figures/supplementary/png/figS1_phenomenon.png) | [PDF](figures/supplementary/pdf/figS1_phenomenon.pdf) |
 
 See:
 
